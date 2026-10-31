@@ -240,6 +240,7 @@ storyboard.json
   script.md
   narration.wav
   scene-01.wav ...
+  subtitles.srt (when subtitleMode=srt)
   <title>.mp4
   preview/ (planOnly 时)
 ```

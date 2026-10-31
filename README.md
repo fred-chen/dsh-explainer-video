@@ -241,6 +241,7 @@ A run leaves:
   script.md
   narration.wav
   scene-01.wav ...
+  subtitles.srt (when subtitleMode=srt)
   <title>.mp4
   preview/ (when planOnly)
 ```

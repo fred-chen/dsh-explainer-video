@@ -7,6 +7,7 @@ import {
   computeTimeline,
   estimateSceneDuration,
   sceneDurationFromAudio,
+  buildSrt,
   extractJson,
   normalizeConfig,
   aspectToSize,
@@ -118,6 +119,14 @@ test("audio duration aligns to frames", () => {
   const result = sceneDurationFromAudio(8.05, 30, 5, 30, 0.3);
   assert.equal(result.frames, Math.round(8.35 * 30));
   assert.ok(Math.abs(result.duration - result.frames / 30) < 1e-9);
+});
+
+test("SRT sidecar generation", () => {
+  const timeline = estimateTimeline(sample);
+  const srt = buildSrt(sample, timeline);
+  assert.match(srt, /^1\n00:00:00,000 --> /);
+  assert.match(srt, /先把结论说清楚/);
+  assert.ok(srt.includes("\n2\n"));
 });
 
 test("json extraction handles code fences and preamble", () => {
