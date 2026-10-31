@@ -21,7 +21,7 @@ It is **not** a text-to-video model. Layout, icons, charts, and motion are gener
 pnpm add github:fred-chen/dsh-explainer-video#v0.1.0
 ```
 
-or install it from the DSH plugin marketplace.
+Note: `pnpm add` only installs the package into a project. DSH also needs `dsh-explainer-video` in the profile's `dsh.profile.bundles` plus installed dependencies; only then is the plugin loaded. On desktop, install through the `Plugins` manager, or add the bundle to the profile and restart.
 
 The package registers through `cordis.patch.yml`:
 

@@ -21,7 +21,7 @@ DeepSeek Harness（DSH）的**矢量科普视频**插件。
 pnpm add github:fred-chen/dsh-explainer-video#v0.1.0
 ```
 
-或在 DSH 的插件市场中安装。
+注意：`pnpm add` 只把包装进当前项目；DSH 还需要把 `dsh-explainer-video` 写入 profile 的 `dsh.profile.bundles` 并安装依赖，插件才会被加载。桌面版请在 `Plugins` 插件管理页安装，或在 profile 的 `package.json` 中加入 bundle 后重启。
 
 插件包会通过 `cordis.patch.yml` 注册：
 
