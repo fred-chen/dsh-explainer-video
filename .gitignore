@@ -1,0 +1,12 @@
+node_modules/
+.dsh-explainer-video/
+*.mp4
+*.wav
+*.mp3
+*.png
+*.jpg
+.env
+.env.*
+token*
+.DS_Store
+._*

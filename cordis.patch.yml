@@ -1,0 +1,46 @@
+# dsh-explainer-video — 矢量科普视频
+#
+# 注册宿主插件行：设置页、explainer_video_generate / explainer_video_render 工具、
+# 视频/预览图流路由都在这一行里。
+#
+# LLM 默认使用当前会话主模型（llmProvider/llmModel 留空），可在设置页覆盖。
+# TTS 默认对齐 dsh-tts：http://ai4090:8080/v1/audio + Qwen3-TTS CustomVoice + uncle_fu。
+# ttsApiKey / asrApiKey 是 secret 字段，保存后设置页只显示“已保存”，不回传明文。
+- insert:
+    - id: explainer-video
+      name: dsh-explainer-video
+      config:
+        enabled: true
+        llmProvider: ""
+        llmModel: ""
+        llmMaxTokens: 8192
+        language: zh
+        ttsEndpoint: http://ai4090:8080/v1/audio
+        ttsModel: Qwen3-TTS-12Hz-1.7B-CustomVoice
+        ttsVoice: uncle_fu
+        ttsLanguage: ""
+        ttsInstructions: ""
+        ttsFormat: wav
+        ttsSampleRate: 0
+        ttsTimeoutSec: 300
+        webMode: auto
+        webMaxQueries: 6
+        webMaxSources: 8
+        webMaxChars: 40000
+        webTimeoutSec: 60
+        asrEndpoint: ""
+        asrModel: ""
+        stylePreset: dark-neon
+        width: 1920
+        height: 1080
+        fps: 30
+        targetDurationSec: 300
+        sceneGapSec: 0.3
+        fontFamily: "PingFang SC, Helvetica Neue, Arial"
+        outputDir: .dsh-explainer-video
+        maxSourceChars: 120000
+        subtitleMode: none
+        bgmPath: ""
+        bgmVolume: 0.12
+        timeoutSec: 1800
+        keepWorkDir: true

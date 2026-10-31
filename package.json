@@ -1,0 +1,105 @@
+{
+  "name": "dsh-explainer-video",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 矢量科普视频插件：素材解析、可选联网补资料、当前会话主模型生成分镜、TTS 预置音色配音、程序化 SVG 动画渲染并合成 MP4。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./core": "./lib/core.js",
+    "./tts-core": "./lib/tts-core.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/core.js",
+    "lib/client.js",
+    "lib/materials.js",
+    "lib/web.js",
+    "lib/llm.js",
+    "lib/tts.js",
+    "lib/tts-core.js",
+    "lib/render.js",
+    "lib/layout.js",
+    "lib/style.js",
+    "lib/icons.js",
+    "lib/audio.js",
+    "lib/media.js",
+    "scripts/extract_materials.py",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "explainer",
+    "vector",
+    "animation",
+    "tts",
+    "video",
+    "qwen3-tts"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "sharp": "^0.35.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-ui-plugin-manager": "^0.1.7-rc.1 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-ui-renderer": "^0.1.7-rc.1 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-ui-tool": "^0.1.7-rc.1 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-settings": "^0.1.7-rc.1 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.1.7-rc.1 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-llm": "^0.1.7-rc.1 || ^0.2.0-rc.1",
+    "@deepseek-ai/schemastery": "^3.18.4",
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": { "optional": true },
+    "@deepseek-ai/dsh-client-ui-plugin-manager": { "optional": true },
+    "@deepseek-ai/dsh-client-ui-renderer": { "optional": true },
+    "@deepseek-ai/dsh-client-ui-tool": { "optional": true },
+    "@deepseek-ai/dsh-settings": { "optional": true },
+    "@deepseek-ai/dsh-tools": { "optional": true },
+    "@deepseek-ai/dsh-llm": { "optional": true },
+    "@deepseek-ai/schemastery": { "optional": true },
+    "react": { "optional": true }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-tool"
+      ],
+      "platform": "web"
+    },
+    "engines": {
+      "dsh": ">=0.1.7-rc.1"
+    }
+  },
+  "scripts": {
+    "test": "node test/core.test.mjs",
+    "test:render": "node test/render.test.mjs",
+    "test:host": "node test/host.test.mjs",
+    "test:smoke": "node test/smoke.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fred-chen/dsh-explainer-video.git"
+  },
+  "homepage": "https://github.com/fred-chen/dsh-explainer-video",
+  "bugs": {
+    "url": "https://github.com/fred-chen/dsh-explainer-video/issues"
+  }
+}
