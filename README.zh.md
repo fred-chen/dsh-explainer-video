@@ -18,7 +18,7 @@ DeepSeek Harness（DSH）的**矢量科普视频**插件。
 ## 安装
 
 ```bash
-pnpm add github:fred-chen/dsh-explainer-video#v0.1.0
+pnpm add github:fred-chen/dsh-explainer-video#v0.1.1
 ```
 
 注意：`pnpm add` 只把包装进当前项目；DSH 还需要把 `dsh-explainer-video` 写入 profile 的 `dsh.profile.bundles` 并安装依赖，插件才会被加载。桌面版请在 `Plugins` 插件管理页安装，或在 profile 的 `package.json` 中加入 bundle 后重启。
@@ -267,7 +267,7 @@ http://127.0.0.1:<webServer.port>/api/dsh-explainer-video/artifacts/<token>
 
 `Plugins → dsh-explainer-video` 分组包含：
 
-- LLM provider/model（留空 = 当前主模型）、最大 tokens、默认语言；
+- LLM provider/model（留空 = 当前主模型）、最大 tokens（默认 65536，可设 1024–131072）、默认语言；
 - TTS 端点、模型、音色、语言、指令、格式、采样率、超时、API key；
 - 联网模式与预算；
 - 风格、分辨率、帧率、目标时长、字幕模式、输出目录、BGM、总超时；

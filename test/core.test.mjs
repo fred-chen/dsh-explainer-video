@@ -11,6 +11,7 @@ import {
   extractJson,
   normalizeConfig,
   aspectToSize,
+  DEFAULT_CONFIG,
 } from "../lib/core.js";
 
 import {
@@ -144,6 +145,11 @@ test("config normalization", () => {
   assert.equal(cfg.webMode, "auto");
   assert.equal(cfg.ttsFormat, "wav");
   assert.equal(cfg.ttsSampleRate, 0);
+  assert.equal(DEFAULT_CONFIG.llmMaxTokens, 65536);
+  const large = normalizeConfig({ llmMaxTokens: 200000 });
+  assert.equal(large.llmMaxTokens, 131072);
+  const small = normalizeConfig({ llmMaxTokens: 1 });
+  assert.equal(small.llmMaxTokens, 1024);
 });
 
 test("aspect to size", () => {

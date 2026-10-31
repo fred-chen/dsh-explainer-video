@@ -13,7 +13,7 @@
         enabled: true
         llmProvider: ""
         llmModel: ""
-        llmMaxTokens: 8192
+        llmMaxTokens: 65536
         language: zh
         ttsEndpoint: http://ai4090:8080/v1/audio
         ttsModel: Qwen3-TTS-12Hz-1.7B-CustomVoice

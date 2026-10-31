@@ -1,6 +1,6 @@
 {
   "name": "dsh-explainer-video",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DeepSeek Harness 矢量科普视频插件：素材解析、可选联网补资料、当前会话主模型生成分镜、TTS 预置音色配音、程序化 SVG 动画渲染并合成 MP4。",
   "type": "module",
   "main": "lib/index.js",

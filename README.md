@@ -18,7 +18,7 @@ It is **not** a text-to-video model. Layout, icons, charts, and motion are gener
 ## Install
 
 ```bash
-pnpm add github:fred-chen/dsh-explainer-video#v0.1.0
+pnpm add github:fred-chen/dsh-explainer-video#v0.1.1
 ```
 
 Note: `pnpm add` only installs the package into a project. DSH also needs `dsh-explainer-video` in the profile's `dsh.profile.bundles` plus installed dependencies; only then is the plugin loaded. On desktop, install through the `Plugins` manager, or add the bundle to the profile and restart.
@@ -268,7 +268,7 @@ http://127.0.0.1:<webServer.port>/api/dsh-explainer-video/artifacts/<token>
 
 `Plugins → dsh-explainer-video` includes:
 
-- LLM provider/model (empty = current main model), max tokens, default language;
+- LLM provider/model (empty = current main model), max tokens (default 65536, range 1024–131072), default language;
 - TTS endpoint, model, voice, language, instructions, format, sample rate, timeout, API key;
 - web mode and budgets;
 - style, resolution, fps, target duration, subtitle mode, output directory, BGM, total timeout;
